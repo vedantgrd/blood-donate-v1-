@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='donate.css'>
+    <link rel="icon" href='./Images/bb_logo(black).png' type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>Donate Blood | Save Lives</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="header-logo"><img src="./Images/bb_logo(black).png"></div>
+            <div class="header-list">
+                <ul>
+                    <li><a href="help.html">Get Help</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="index.html#vol-sect">Volunteer</a></li>
+                    <li><a href="index.html#about-us">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="donation-container">
+        <div class="form-header">
+            <h1>Blood Donation Form</h1>
+            <p>Your donation can save up to 3 lives! Fill out the form below to schedule your donation.</p>
+        </div>
+
+        <div class="donation-form">
+            <form id="bloodDonationForm" action="process-donation.php" method="POST">
+                <div class="form-section personal-info">
+                    <h2><i class="fas fa-user-circle"></i> Personal Information</h2>
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" min="18" max="65" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-section medical-info">
+                    <h2><i class="fas fa-heartbeat"></i> Medical Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bloodType">Blood Type</label>
+                            <select id="bloodType" name="bloodType">
+                                <option value="">Unknown/Not Sure</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" name="weight" min="45" required>
+                        </div>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <p>Have you ever experienced any of the following? (Check all that apply)</p>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="highBP" name="medicalHistory[]" value="highBP">
+                            <label for="highBP">High Blood Pressure</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="diabetes" name="medicalHistory[]" value="diabetes">
+                            <label for="diabetes">Diabetes</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="heartDisease" name="medicalHistory[]" value="heartDisease">
+                            <label for="heartDisease">Heart Disease</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hepatitis" name="medicalHistory[]" value="hepatitis">
+                            <label for="hepatitis">Hepatitis</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="recentSurgery" name="medicalHistory[]" value="recentSurgery">
+                            <label for="recentSurgery">Surgery in the last 6 months</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastDonation">Date of Last Donation (if applicable)</label>
+                        <input type="date" id="lastDonation" name="lastDonation">
+                    </div>
+                </div>
+
+                <div class="form-section donation-details">
+                    <h2><i class="fas fa-calendar-alt"></i> Donation Details</h2>
+                    <div class="form-group">
+                        <label for="donationCenter">Preferred Donation Center</label>
+                        <select id="donationCenter" name="donationCenter" required>
+                            <option value="">Select a center</option>
+                            <option value="center1">City General Hospital</option>
+                            <option value="center2">Community Blood Bank</option>
+                            <option value="center3">University Medical Center</option>
+                            <option value="center4">Regional Health Clinic</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="donationDate">Preferred Date</label>
+                        <input type="date" id="donationDate" name="donationDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="donationTime">Preferred Time</label>
+                        <select id="donationTime" name="donationTime" required>
+                            <option value="">Select time</option>
+                            <option value="morning">Morning (9AM - 12PM)</option>
+                            <option value="afternoon">Afternoon (12PM - 3PM)</option>
+                            <option value="evening">Evening (3PM - 6PM)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-consent">
+                    <div class="checkbox-item consent-checkbox">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">I confirm that all information provided is accurate to the best of my knowledge. I understand that I will undergo a brief health screening before donating blood.</label>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn primary">Schedule Donation</button>
+                    <button type="button" class="btn" onclick="window.location.href='index.html'">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Blood Donation Initiative. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./Donate.js"></script>
+</body>
+</html>
